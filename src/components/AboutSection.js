@@ -5,24 +5,15 @@ import {motion} from 'framer-motion';
 import home1 from '../img/home1.png';
 //Styled
 import {About, Description, Image, Hide } from '../styles';
-
-const titleAnim = {
-    hidden: {opacity: 0},
-    show: {opacity: 1, transition: {duration: 1}}
-}
-
-const container = {
-    hidden: {x: 100},
-    show: {x: 0, transition: {duration: 0.75, ease: "easeOut", staggerChildren: 1, when:'beforeChildren'}}
-}
+import {titleAnim, fade, photoAnim} from '../animation';
 
 const AboutSection = () => {
     return(
         <About>
             <Description>
-                <motion.div variants={container} initial="hidden" animate="show" className="title">
+                <motion.div>
                     <Hide>
-                        <motion.h2 variants={titleAnim} initial="hidden" animate="show" >We work to make</motion.h2 >
+                        <motion.h2 variants={titleAnim}>We work to make</motion.h2 >
                     </Hide>
                     <Hide>
                         <motion.h2 variants={titleAnim}>
@@ -33,14 +24,14 @@ const AboutSection = () => {
                         <motion.h2 variants={titleAnim}>true.</motion.h2>
                     </Hide>
                 </motion.div>
-                <p>Contract us for  any photography or videography ideas that you have. We have professionals with amazing skills.</p>
-                <button>Contacts Us</button>
+                <motion.p variants={fade}>Contract us for  any hotography or videography ideas that you have. We have professionals with amazing skills.</motion.p>
+                <motion.button variants={fade}>Contacts Us</motion.button>
             </Description>
             <Image >
-                <img src={home1} alt="guy with a camera"/>
+                <motion.img variants={photoAnim} src={home1} alt="guy with a camera"/>
             </Image>
         </About>
     )
 }
 
-export default AboutSection;
+export default AboutSection; 
