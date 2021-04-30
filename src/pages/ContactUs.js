@@ -5,9 +5,12 @@ import styled from 'styled-components';
 import {pageAnimation, titleAnim} from '../animation';
 import { Hide } from '../styles';
 
+import ScrollTop from '../components/ScrollTop';
+
 const ContactUs = () => {
     return(
         <ContractStyle variants={pageAnimation} initial="hidden" animate="show" exit="exit" style={{background: "#fff"}}>
+            <ScrollTop />
             <Title>
                 <Hide>
                     <motion.h2 variants={titleAnim}>Get in touch</motion.h2>

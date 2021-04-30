@@ -1,6 +1,7 @@
 import React from 'react';
 import {Switch, Route, useLocation} from 'react-router-dom';
 import {AnimatePresence} from 'framer-motion';
+
 //Global Style
 import GlobalStyle  from './components/GlobalStyle';
 

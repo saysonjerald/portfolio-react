@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import { useScroll } from '../components/useScroll';
+import ScrollTop from '../components/ScrollTop';
 
 import {motion} from 'framer-motion';
 import {containerSlider ,slider,pageAnimation, fade, photoAnim, lineAnim} from '../animation';
@@ -19,6 +20,7 @@ const OurWork = () => {
 
     return(
         <Work variants={pageAnimation} initial="hidden" animate="show" exit="exit" style={{background: "#fff"}}>
+            <ScrollTop />
             <motion.div variants={containerSlider}>
                 <Frame1 variants={slider}></Frame1>
                 <Frame2 variants={slider}></Frame2>
